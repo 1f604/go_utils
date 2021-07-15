@@ -24,7 +24,7 @@ Intended to be run first.
 
 The setLogFile function sets a file to write all the log.print lines into.
 
-If the file cannot be created or opened, it prints a message an exits your application.
+If the file cannot be created or opened, it prints a message and exits your application.
 
 Intended to be run second.
 
