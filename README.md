@@ -14,7 +14,7 @@ Currently contains 3 functionalities:
 
 ## Check if another instance is already running
 
-The checkTCPPort function checks to see if the TCP port is already used. 
+The `checkTCPPort` function checks to see if the TCP port is already used. 
 
 If so, then it prints a message and exits your application.
 
@@ -22,7 +22,7 @@ Intended to be run first.
 
 ## Set log file
 
-The setLogFile function sets a file to write all the log.print lines into.
+The `setLogFile` function sets a file to write all the log.print lines into.
 
 If the file cannot be created or opened, it prints a message and exits your application.
 
@@ -30,7 +30,7 @@ Intended to be run second.
 
 ## Re-launch a process if it fails
 
-The retryproc and retryfunc functions will keep trying to re-run a process or a function respectively.
+The `retryproc` and `retryfunc` functions will keep trying to re-run a process or a function respectively.
 
 These functions call the blocking process or function in a loop, therefore they consume almost no resources when the process or function is running.
 
