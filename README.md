@@ -1,5 +1,4 @@
-# go_utils
-golang utils lib
+Golang utils library.
 
 # Usage
 
