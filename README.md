@@ -1,6 +1,12 @@
 # go_utils
 golang utils lib
 
+# Usage
+
+To use, simply place `libutils.go` into the same directory as your `main.go` file, and then you can start using the functions provided.
+
+# Functions provided
+
 Currently contains 3 functionalities:
 
 * Make sure only 1 instance is running.
