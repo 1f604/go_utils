@@ -2,6 +2,7 @@ package main
 
 import (
 	"log"
+	"main/util"
 	"runtime"
 	"time"
 )
@@ -20,11 +21,11 @@ func foo() {
 }
 
 func main() {
-	l := checkTCPPort(TCP_port)
-	f := setLogFile(logfilepath)
-	defer Use(l, f) // need this otherwise GC will close TCP port.
+	l := util.CheckTCPPort(TCP_port)
+	f := util.SetLogFile(logfilepath)
+	defer util.Use(l, f) // need this otherwise GC will close TCP port.
 
-	go retryfunc("func foo", foo, 3*time.Second, 3*time.Second)
-	go retryproc("../sleep/sleep1", 3*time.Second, 3*time.Second)
+	go util.Retryfunc("func foo", foo, 3*time.Second, 3*time.Second)
+	go util.Retryproc("../sleep/sleep1", 3*time.Second, 3*time.Second)
 	time.Sleep(100 * time.Hour)
 }
