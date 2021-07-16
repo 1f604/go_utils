@@ -17,7 +17,7 @@ Currently contains 4 functionalities:
 
 The `Use` function gets around this compilation error.
 
-You need this in order to maintain a reference to the TCP listener, which you need to do in order to prevent the GC from closing the TCP port. 
+You need this in order to maintain a reference to the TCP listener in the main thread, which you need to do in order to prevent the GC from closing the TCP port. 
 
 ## Check if another instance is already running
 
