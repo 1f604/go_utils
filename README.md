@@ -6,11 +6,18 @@ To use, simply place `libutils.go` into the same directory as your `main.go` fil
 
 # Functions provided
 
-Currently contains 3 functionalities:
+Currently contains 4 functionalities:
 
+* Bypass "variable declared but not used".
 * Make sure only 1 instance is running.
 * Set log file.
 * Re-launch process if it terminates.
+
+## Bypass "variable declared but not used"
+
+The `Use` function gets around this compilation error.
+
+You need this in order to maintain a reference to the TCP listener, which you need to do in order to prevent the GC from closing the TCP port. 
 
 ## Check if another instance is already running
 
