@@ -2,7 +2,7 @@ Golang utils library.
 
 # Usage
 
-To use, simply place `libutils.go` into the same directory as your `main.go` file, then you can start using the functions provided.
+To use, simply place the `util` directory into the same directory as your `main.go` file, then you can start using the functions provided.
 
 # Functions provided
 
