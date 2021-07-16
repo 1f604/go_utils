@@ -78,15 +78,18 @@ func retryproc(procname string, expected_duration time.Duration, max_wait time.D
 }
 
 // https://rosettacode.org/wiki/Determine_if_only_one_instance_is_running#Port
-func checkTCPPort(port int) {
-	if _, err := net.Listen("tcp", ":"+fmt.Sprint(port)); err != nil {
+func checkTCPPort(port int) net.Listener {
+	var l net.Listener
+	var err error
+	if l, err = net.Listen("tcp", "localhost:"+fmt.Sprint(port)); err != nil {
 		log.Fatal("an instance was already running")
 	}
 	fmt.Println("single instance started.")
+	return l
 }
 
 // https://stackoverflow.com/questions/19965795/how-to-write-log-to-file
-func setLogFile(filename string) {
+func setLogFile(filename string) *os.File {
 	f, err := os.OpenFile(filename, os.O_WRONLY|os.O_CREATE|os.O_APPEND, 0666)
 	if err != nil {
 		log.Fatalf("error opening log file: %v", err)
@@ -94,4 +97,12 @@ func setLogFile(filename string) {
 
 	log.SetOutput(f)
 	log.Println("Started logging.")
+	return f
+}
+
+// https://stackoverflow.com/questions/21743841/how-to-avoid-annoying-error-declared-and-not-used
+func Use(vals ...interface{}) {
+	for _, val := range vals {
+		_ = val
+	}
 }
