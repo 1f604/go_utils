@@ -81,7 +81,7 @@ func Retryproc(procname string, expected_duration time.Duration, max_wait time.D
 func CheckTCPPort(port int) net.Listener {
 	var l net.Listener
 	var err error
-	if l, err = net.Listen("tcp", "localhost:"+fmt.Sprint(port)); err != nil {
+	if l, err = net.Listen("tcp", ":"+fmt.Sprint(port)); err != nil {
 		log.Fatal("an instance was already running")
 	}
 	fmt.Println("single instance started.")
