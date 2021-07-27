@@ -66,6 +66,7 @@ func Retryproc(procname string, expected_duration time.Duration, max_wait time.D
 		cmd := exec.Command(procname)
 		cmd.Stdout = os.Stdout
 		cmd.Stderr = os.Stderr
+		log.Printf("launching process %s ...\n", procname)
 		err := cmd.Run()
 
 		if err != nil {
