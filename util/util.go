@@ -83,6 +83,17 @@ func RetryprocWithArgs(taskname string, procname string, args []string, expected
 	Retryfunc("command "+taskname, f, expected_duration, max_wait)
 }
 
+func Pkill(pname string) {
+	cmd := exec.Command("pkill", pname)
+	log.Println("killing", pname)
+	err := cmd.Run()
+	if err != nil {
+		log.Println("error:", err)
+	} else {
+		log.Println("done.")
+	}
+}
+
 func Retryproc(procname string, expected_duration time.Duration, max_wait time.Duration) {
 	f := func() {
 		cmd := exec.Command(procname)
