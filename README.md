@@ -6,12 +6,13 @@ To use, simply place the `util` directory into the same directory as your `main.
 
 # Functions provided
 
-Currently contains 4 functionalities:
+Currently contains 5 functionalities:
 
 * Bypass "variable declared but not used".
 * Make sure only 1 instance is running.
 * Set log file.
 * Re-launch process if it terminates.
+* Pkill process.
 
 ## Bypass "variable declared but not used"
 
