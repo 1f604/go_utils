@@ -11,8 +11,8 @@ Currently contains 5 functionalities:
 * Bypass "variable declared but not used".
 * Make sure only 1 instance is running.
 * Set log file.
-* Re-launch process if it terminates.
-* Pkill process.
+* Re-launch process if it terminates (with or without args).
+* Pkill process by name.
 
 ## Bypass "variable declared but not used"
 
