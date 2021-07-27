@@ -54,7 +54,7 @@ func Retryfunc(taskname string, dotask retrylib_task, expected_duration time.Dur
 	count := newRetrylibCounter(max_wait)
 	for {
 		start := time.Now()
-		print_log := count.maxValReached()
+		print_log := !count.maxValReached()
 		if print_log {
 			log.Printf("launching %s ...\n", taskname)
 		}
@@ -75,12 +75,12 @@ func Retryfunc(taskname string, dotask retrylib_task, expected_duration time.Dur
 	}
 }
 
-func RetryprocWithArgs(procname string, args []string, expected_duration time.Duration, max_wait time.Duration) {
+func RetryprocWithArgs(taskname string, procname string, args []string, expected_duration time.Duration, max_wait time.Duration) {
 	f := func() {
 		cmd := exec.Command(procname, args...)
 		cmd.Run()
 	}
-	Retryfunc("command "+procname, f, expected_duration, max_wait)
+	Retryfunc("command "+taskname, f, expected_duration, max_wait)
 }
 
 func Retryproc(procname string, expected_duration time.Duration, max_wait time.Duration) {
