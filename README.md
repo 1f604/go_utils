@@ -2,12 +2,13 @@ Golang utils library.
 
 # Usage
 
-To use, simply place the `util` directory into the same directory as your `main.go` file, then you can start using the functions provided.
+To use, simply place the `util.go` file into the same directory as your `main.go` file, then you can start using the functions provided.
 
 # Functions provided
 
-Currently contains 5 functionalities:
+Currently contains 6 functionalities:
 
+* Log rotation, you can set log rotation interval.
 * Bypass "variable declared but not used".
 * Make sure only 1 instance is running.
 * Set log file.
